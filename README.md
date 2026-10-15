@@ -64,6 +64,17 @@ source("code/run_debit_cards.R")
 
 Saved to `output/`: `model_summaries.txt`, `main_results.csv`, `analysis_dataset.csv`, `event_study_no_cov.png`, `event_study_cov.png`.
 
+## Example output (synthetic data)
+
+Without covariates, the event study shows a pre-trend:
+
+![Event study without covariates](figures/event_study_no_cov.png)
+
+With baseline ATM and branch controls, pre-trends are flat and the post-law estimate recovers the simulated effect (about 120 cards per 10,000 adults):
+
+![Event study with covariates](figures/event_study_cov.png)
+
+*These figures are generated from simulated data and are not the thesis results.*
 ## About the synthetic data
 
 Treatment assignment in the simulation depends on ATM and branch density, and the simulated outcome has covariate-specific trends. As a result, the specification without covariates is biased upward and the specification with covariates recovers the simulated effect (120 cards per 10,000 adults). This mirrors why the covariate-adjusted model matters in the thesis.
